@@ -1,0 +1,19 @@
+[alias]
+	a = add
+	c = commit
+	f = fetch
+	l = log --graph
+    la = log --graph --all
+    lo = log --graph --oneline
+    lao = log --graph --all --oneline
+	s = status
+	sw = switch
+    p = pull
+	P = push
+[user]
+	name = Keegan Brown
+	email = keeganbrown@outlook.de
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
