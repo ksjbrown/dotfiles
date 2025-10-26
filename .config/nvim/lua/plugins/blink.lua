@@ -4,7 +4,10 @@ return {
     version = "1.*",
     event = { "InsertEnter", "CmdlineEnter" },
     opts = {
-        cmdline = { enabled = false },
+        cmdline = {
+            enabled = true,
+            keymap = { preset = 'inherit' },
+        },
         completion = {
             documentation = {
                 auto_show = true,
