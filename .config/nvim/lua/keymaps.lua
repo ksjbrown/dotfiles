@@ -46,6 +46,7 @@ vim.keymap.set({"n", "v"}, "<leader>.", vim.lsp.buf.code_action, { desc = "Actio
 vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Action" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Goto Definition" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
 vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, { desc = "Goto Type Definition" })
 vim.keymap.set("n", "gR", vim.lsp.buf.references, { desc = "Goto References" })

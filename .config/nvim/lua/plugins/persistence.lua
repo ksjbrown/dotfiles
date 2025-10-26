@@ -3,7 +3,7 @@ return {
 	event = "BufReadPre",
 	keys = {
 		{ "<leader>pl", function() require("persistence").load() end,   desc = "Load", },
-		{ "<leader>ps", function() require("persistence").select() end, desc = "Select", },
+		{ "<leader>pL", function() require("persistence").select() end, desc = "Select", },
 	},
 	opts = {},
 }

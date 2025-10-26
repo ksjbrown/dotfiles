@@ -19,6 +19,7 @@ return {
         { "<leader>fD",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
         { "<leader>ff",      function() Snacks.picker.files({ cwd = require("util").root() }) end,   desc = "Files" },
         { "<leader>fh",      function() Snacks.picker.help() end,                                    desc = "Help Pages" },
+        { "<leader>fj",      function() Snacks.picker.jumps() end,                                    desc = "Help Pages" },
         { "<leader>fk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
         { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent Files" },
         { "<leader>fR",      function() Snacks.picker.lsp_references() end,                          desc = "Recent Files" },
