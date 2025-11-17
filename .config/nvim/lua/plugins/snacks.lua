@@ -1,8 +1,3 @@
-local explorer_opts = {
-    auto_close = false,
-    layout = { preset = "right", preview = false },
-    hidden = true,
-}
 return {
     "folke/snacks.nvim",
     lazy = false,
@@ -10,16 +5,18 @@ return {
     keys = {
         { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Find" },
         { "<leader>,",       function() Snacks.picker.buffers({ focus = "list" }) end,               desc = "Buffers" },
-        { "<leader>/",       function() Snacks.picker.grep({ cwd = require("util").root() }) end,    desc = "Grep" },
+        { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
         { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
         { "<leader>e",       function() Snacks.explorer({ cwd = require("util").root() }) end,       desc = "Files" },
-        { "<leader>E",       function() Snacks.explorer({ cwd = vim.fn.stdpath("config") }) end,     desc = "Files" },
+        { "<leader>E",       function() Snacks.explorer() end,                                       desc = "Files" },
+        { "<leader>C",       function() Snacks.explorer({ cwd = vim.fn.stdpath("config") }) end,     desc = "Files" },
         { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Config" },
         { "<leader>fd",      function() Snacks.picker.diagnostics_buffer() end,                      desc = "Diagnostics (Buffer)" },
         { "<leader>fD",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
         { "<leader>ff",      function() Snacks.picker.files({ cwd = require("util").root() }) end,   desc = "Files" },
+        { "<leader>fF",      function() Snacks.picker.files() end,                                   desc = "Files" },
         { "<leader>fh",      function() Snacks.picker.help() end,                                    desc = "Help Pages" },
-        { "<leader>fj",      function() Snacks.picker.jumps() end,                                    desc = "Help Pages" },
+        { "<leader>fj",      function() Snacks.picker.jumps() end,                                   desc = "Help Pages" },
         { "<leader>fk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
         { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent Files" },
         { "<leader>fR",      function() Snacks.picker.lsp_references() end,                          desc = "Recent Files" },
@@ -32,7 +29,7 @@ return {
         Snacks.setup(opts)
         Snacks.toggle.animate():map("<leader>ua")
         Snacks.toggle.diagnostics():map("<leader>uD")
-        Snacks.toggle.dim():map("<leader>ud")
+        Snacks.toggle.dim():map("<leader>uf")
         Snacks.toggle.indent():map("<leader>ui")
         Snacks.toggle.inlay_hints():map("<leader>uh")
         Snacks.toggle.line_number():map("<leader>ul")
@@ -40,6 +37,17 @@ return {
         Snacks.toggle.option("relativenumber", { name = "Relative Line Numbers" }):map("<leader>uL")
         Snacks.toggle.option("wrap", { name = "Word Wrap" }):map("<leader>uw")
         Snacks.toggle.option("list", { name = "Whitespace" }):map("<leader>uW")
+        Snacks.toggle.new({
+            name = "Diagnostics (Current Line)",
+            get = function ()
+                return vim.diagnostic.config().virtual_text.current_line
+            end,
+            set = function (state)
+                vim.diagnostic.config({
+                    virtual_text = { current_line = state },
+                })
+            end,
+        }):map("<leader>ud")
         -- prevent flashing in blink.cmp
         local group = vim.api.nvim_create_augroup("snacks_blink_compat", { clear = true })
         vim.api.nvim_create_autocmd("User", {

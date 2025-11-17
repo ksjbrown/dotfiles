@@ -1,11 +1,15 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
+    keys = {
+        { "<F1>", "<Cmd>WhichKey<CR>", desc = "Which-Key" },
+    },
 	opts = {
 		preset = "helix",
 		win = {
 			border = "rounded",
 		},
+        triggers = {},
 		spec = {
 			{ "<leader>b", group = "Buffers..." },
 			{ "<leader>c", group = "Code..." },

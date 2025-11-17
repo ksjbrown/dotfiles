@@ -40,7 +40,10 @@ return {
             window = {
                 show_documentation = false,
             }
-        }
+        },
+        sources = {
+            default = { 'lsp', 'path', 'snippets' },
+        },
     },
     build = "cargo build --release",
 }
