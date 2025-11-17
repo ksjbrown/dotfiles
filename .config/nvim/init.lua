@@ -11,4 +11,5 @@ require("lazy").setup("plugins", {
 		border = "rounded",
 	},
 })
+require("lsp")
 require("keymaps")
