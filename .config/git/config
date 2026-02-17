@@ -3,12 +3,13 @@
 	c = commit
 	f = fetch
 	l = log --graph
-    la = log --graph --all
-    lo = log --graph --oneline
-    lao = log --graph --all --oneline
-	s = status
+	la = log --graph --all
+	lo = log --graph --oneline
+	loa = log --graph --oneline --all
+	st = status
 	sw = switch
-    p = pull
+	sh = show
+	p = pull
 	P = push
 [user]
 	name = Keegan Brown
