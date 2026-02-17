@@ -3,26 +3,26 @@ return {
     lazy = false,
     priority = 1000,
     keys = {
-        { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Find" },
-        { "<leader>,",       function() Snacks.picker.buffers({ focus = "list" }) end,               desc = "Buffers" },
-        { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
-        { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
-        { "<leader>e",       function() Snacks.explorer({ cwd = require("util").root() }) end,       desc = "Files" },
-        { "<leader>E",       function() Snacks.explorer() end,                                       desc = "Files" },
-        { "<leader>C",       function() Snacks.explorer({ cwd = vim.fn.stdpath("config") }) end,     desc = "Files" },
-        { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Config" },
-        { "<leader>fd",      function() Snacks.picker.diagnostics_buffer() end,                      desc = "Diagnostics (Buffer)" },
-        { "<leader>fD",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
-        { "<leader>ff",      function() Snacks.picker.files({ cwd = require("util").root() }) end,   desc = "Files" },
-        { "<leader>fF",      function() Snacks.picker.files() end,                                   desc = "Files" },
-        { "<leader>fh",      function() Snacks.picker.help() end,                                    desc = "Help Pages" },
-        { "<leader>fj",      function() Snacks.picker.jumps() end,                                   desc = "Help Pages" },
-        { "<leader>fk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
-        { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent Files" },
-        { "<leader>fR",      function() Snacks.picker.lsp_references() end,                          desc = "Recent Files" },
-        { "<leader>fs",      function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
-        { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
-        { "<leader>uz",      function() Snacks.zen.zoom() end,                                       desc = "Zoom" },
+        { "<leader><space>", function() Snacks.picker.smart() end,                                                   desc = "Find" },
+        { "<leader>,",       function() Snacks.picker.buffers({ focus = "list", sort_lastused = true }) end,         desc = "Buffers" },
+        { "<leader>/",       function() Snacks.picker.grep() end,                                                    desc = "Grep" },
+        { "<leader>:",       function() Snacks.picker.command_history() end,                                         desc = "Command History" },
+        { "<leader>e",       function() Snacks.explorer() end,                                                       desc = "Files" },
+        { "<leader>E",       function() Snacks.explorer({ cwd = require("util").root() }) end,                       desc = "Files" },
+        { "<leader>C",       function() Snacks.explorer({ cwd = vim.fn.stdpath("config") }) end,                     desc = "Files" },
+        { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config"), hidden = true }) end,  desc = "Config" },
+        { "<leader>fd",      function() Snacks.picker.diagnostics_buffer() end,                                      desc = "Diagnostics (Buffer)" },
+        { "<leader>fD",      function() Snacks.picker.diagnostics() end,                                             desc = "Diagnostics" },
+        { "<leader>ff",      function() Snacks.picker.files({ cwd = require("util").root(), hidden = true }) end,    desc = "Files" },
+        { "<leader>fF",      function() Snacks.picker.files({ hidden = true }) end,                                  desc = "Files" },
+        { "<leader>fh",      function() Snacks.picker.help() end,                                                    desc = "Help Pages" },
+        { "<leader>fj",      function() Snacks.picker.jumps() end,                                                   desc = "Help Pages" },
+        { "<leader>fk",      function() Snacks.picker.keymaps() end,                                                 desc = "Keymaps" },
+        { "<leader>fr",      function() Snacks.picker.recent() end,                                                  desc = "Recent Files" },
+        { "<leader>fR",      function() Snacks.picker.lsp_references() end,                                          desc = "Recent Files" },
+        { "<leader>fs",      function() Snacks.picker.lsp_symbols() end,                                             desc = "LSP Symbols" },
+        { "<leader>gg",      function() Snacks.lazygit() end,                                                        desc = "Lazygit" },
+        { "<leader>uz",      function() Snacks.zen.zoom() end,                                                       desc = "Zoom" },
     },
     config = function(_, opts)
         local Snacks = require("snacks")
@@ -39,10 +39,10 @@ return {
         Snacks.toggle.option("list", { name = "Whitespace" }):map("<leader>uW")
         Snacks.toggle.new({
             name = "Diagnostics (Current Line)",
-            get = function ()
+            get = function()
                 return vim.diagnostic.config().virtual_text.current_line
             end,
-            set = function (state)
+            set = function(state)
                 vim.diagnostic.config({
                     virtual_text = { current_line = state },
                 })

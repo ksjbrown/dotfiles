@@ -29,6 +29,15 @@ return {
                 "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
             },
         },
+        fuzzy = {
+            implementation = "rust",
+            max_typos = 0,
+            sorts = {
+                'exact',
+                'score',
+                'sort_text'
+            },
+        },
         keymap = {
             preset = "default",
             ["<Tab>"] = { "accept", "fallback" },
@@ -40,9 +49,6 @@ return {
             window = {
                 show_documentation = false,
             }
-        },
-        sources = {
-            default = { 'lsp', 'path', 'snippets' },
         },
     },
     build = "cargo build --release",

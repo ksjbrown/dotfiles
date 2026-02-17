@@ -24,12 +24,12 @@ return {
             { "<leader>dC", function() require("dap").run_to_cursor() end,                                        desc = "Run to Cursor" },
             { "<S-F5>",     function() require("dap").continue() end,                                             desc = "Run/Continue" },
             { "<leader>di", function() require("dap").step_into() end,                                            desc = "Step Into" },
-            { "<F7>", function() require("dap").step_into() end,                                            desc = "Step Into" },
+            { "<F7>",       function() require("dap").step_into() end,                                            desc = "Step Into" },
             { "<leader>dl", function() require("dap").run_last() end,                                             desc = "Run Last" },
             { "<leader>do", function() require("dap").step_over() end,                                            desc = "Step Over" },
             { "<F6>",       function() require("dap").step_over() end,                                            desc = "Step Over" },
             { "<leader>dO", function() require("dap").step_out() end,                                             desc = "Step Out" },
-            { "<F8>", function() require("dap").step_out() end,                                             desc = "Step Out" },
+            { "<F8>",       function() require("dap").step_out() end,                                             desc = "Step Out" },
             { "<leader>dp", function() require("dap").pause() end,                                                desc = "Pause" },
             { "<leader>dr", function() require("dap").repl.toggle() end,                                          desc = "Toggle REPL" },
             { "<leader>ds", function() require("dap").session() end,                                              desc = "Session" },
@@ -46,6 +46,16 @@ return {
         config = function(_, _)
             require("dap-python").setup("python3")
         end,
+    },
+    {
+        "leoluz/nvim-dap-go",
+        ft = { "go" },
+        dependencies = {
+            { "mfussenegger/nvim-dap" }
+        },
+        config = function(_, _)
+            require("dap-go").setup()
+        end
     },
     {
         "igorlfs/nvim-dap-view",
