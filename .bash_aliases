@@ -1,12 +1,17 @@
-alias cdd='cd ~/develop/'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias lg='lazygit'
+alias cdd='cd ~/develop'
 alias g='git'
+alias gg='lazygit'
+alias l='ls -lhF'
+alias ll='ls -lhAF'
 alias po='poweroff'
 alias py='python3'
 alias v='nvim'
+alias t='tmux new -A -s default'
+alias tn='tmux new -A -s'
+alias ta='tmux attach -t'
+alias tl='tmux ls'
+alias tkS='tmux kill-server'
+alias tks='tmux kill-session -t'
 function tm {
   # 1. Check if already inside tmux
   if [ -n "$TMUX" ]; then
