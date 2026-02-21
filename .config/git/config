@@ -11,6 +11,7 @@
 	sh = show
 	p = pull
 	P = push
+	wt = worktree
 [user]
 	name = Keegan Brown
 	email = keeganbrown@outlook.de
