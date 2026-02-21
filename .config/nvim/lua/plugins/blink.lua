@@ -40,9 +40,10 @@ return {
         },
         keymap = {
             preset = "default",
-            ["<Tab>"] = { "accept", "fallback" },
-            ["<C-k"] = { "show_documentation", "hide_documentation", "fallback"}
-            -- ["<Enter>"] = { "accept", "fallback" },
+            ["<Tab>"] = { "accept", "snippet_forward", "fallback" },
+            ["<Enter>"] = { "snippet_forward", "fallback" },
+            ["<S-Enter>"] = { "snippet_backward", "fallback" },
+            ["<C-k>"] = { "show_documentation", "hide_documentation", "fallback" }
         },
         signature = {
             enabled = true,
@@ -50,6 +51,18 @@ return {
                 show_documentation = false,
             }
         },
+        snippets = {
+            preset = "default",
+        },
+        sources = {
+            providers = {
+                snippets = {
+                    opts = {
+                        friendly_snippets = true,
+                    }
+                }
+            }
+        }
     },
     build = "cargo build --release",
 }
