@@ -42,7 +42,7 @@ return {
             preset = "default",
             ["<Tab>"] = { "accept", "snippet_forward", "fallback" },
             ["<Enter>"] = { "snippet_forward", "fallback" },
-            ["<S-Enter>"] = { "snippet_backward", "fallback" },
+            ["<Backspace>"] = { "snippet_backward", "fallback" },
             ["<C-k>"] = { "show_documentation", "hide_documentation", "fallback" }
         },
         signature = {

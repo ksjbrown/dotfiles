@@ -3,6 +3,7 @@ return {
     lazy = false,
     priority = 1000,
     keys = {
+        { "<leader><space>", function() Snacks.picker.smart() end,                                                   desc = "Find" },
         { "<leader>,",       function() Snacks.picker.buffers({ focus = "list", sort_lastused = true }) end,         desc = "Buffers" },
         { "<leader>/",       function() Snacks.picker.grep() end,                                                    desc = "Grep" },
         { "<leader>:",       function() Snacks.picker.command_history() end,                                         desc = "Command History" },
@@ -12,7 +13,7 @@ return {
         { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config"), hidden = true }) end,  desc = "Config" },
         { "<leader>fd",      function() Snacks.picker.diagnostics_buffer() end,                                      desc = "Diagnostics (Buffer)" },
         { "<leader>fD",      function() Snacks.picker.diagnostics() end,                                             desc = "Diagnostics" },
-        { "<leader><space>",      function() Snacks.picker.files({ cwd = require("util").root(), hidden = true }) end,    desc = "Files" },
+        { "<leader>ff",      function() Snacks.picker.files({ cwd = require("util").root(), hidden = true }) end,    desc = "Files" },
         { "<leader>fF",      function() Snacks.picker.files({ hidden = true }) end,                                  desc = "Files" },
         { "<leader>fh",      function() Snacks.picker.help() end,                                                    desc = "Help Pages" },
         { "<leader>fj",      function() Snacks.picker.jumps() end,                                                   desc = "Help Pages" },
