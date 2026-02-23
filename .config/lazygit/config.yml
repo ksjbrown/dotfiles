@@ -1,4 +1,5 @@
 gui:
+  screenMode: 'half'
   theme:
     activeBorderColor:
       - '#fab387'
