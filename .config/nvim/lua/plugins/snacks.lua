@@ -34,6 +34,7 @@ return {
         Snacks.toggle.inlay_hints():map("<leader>uh")
         Snacks.toggle.line_number():map("<leader>ul")
         Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+        Snacks.toggle.option("expandtab", { name = "Tab" }):map("<leader>ut")
         Snacks.toggle.option("relativenumber", { name = "Relative Line Numbers" }):map("<leader>uL")
         Snacks.toggle.option("wrap", { name = "Word Wrap" }):map("<leader>uw")
         Snacks.toggle.option("list", { name = "Whitespace" }):map("<leader>uW")
