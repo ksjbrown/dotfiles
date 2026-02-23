@@ -1,6 +1,7 @@
 -- https://github.com/folke/flash.nvim?tab=readme-ov-file#%EF%B8%8F-configuration
 return {
     "folke/flash.nvim",
+    enabled = false,
     event = "VeryLazy",
     opts = {
         modes = {
