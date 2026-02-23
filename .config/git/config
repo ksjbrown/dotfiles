@@ -12,6 +12,7 @@
 	p = pull
 	P = push
 	wt = worktree
+	m = merge
 [user]
 	name = Keegan Brown
 	email = keeganbrown@outlook.de
