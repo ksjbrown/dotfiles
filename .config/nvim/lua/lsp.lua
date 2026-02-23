@@ -39,4 +39,5 @@ vim.lsp.enable({
     "marksman",
     "pyright",
     "rust_analyzer",
+    "ts_ls",
 })
