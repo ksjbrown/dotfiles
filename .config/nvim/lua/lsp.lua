@@ -36,7 +36,6 @@ vim.lsp.enable({
     "angularls",
     "gopls",
     "lua_ls",
-    "marksman",
     "pyright",
     "rust_analyzer",
     "ts_ls",
