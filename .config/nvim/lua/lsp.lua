@@ -33,6 +33,7 @@ vim.lsp.config('*', {
     root_markers = { '.git' },
 })
 vim.lsp.enable({
+    "angularls",
     "gopls",
     "lua_ls",
     "marksman",
