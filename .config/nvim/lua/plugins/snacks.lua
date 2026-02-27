@@ -65,8 +65,7 @@ return {
     opts = {
         explorer = { replace_netrw = true },
         indent = {
-            enabled = false,
-            only_scope = true,
+            enabled = true,
             animate = { enabled = false },
         },
         lazygit = {},
@@ -79,17 +78,7 @@ return {
                 },
             },
         },
-        scroll = {
-            animate = {
-                duration = { step = 15, total = 150 },
-                easing = "linear",
-            },
-            animate_repeat = {
-                delay = 100,
-                duration = { step = 5, total = 50 },
-                easing = "linear",
-            },
-        },
+        scroll = {},
         styles = {
             lazygit = { height = 0, width = 0 },
         },
