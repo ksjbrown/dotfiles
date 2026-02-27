@@ -35,6 +35,7 @@ vim.lsp.config('*', {
 vim.lsp.enable({
     "angularls",
     "bashls",
+    "clangd",
     "gopls",
     "lua_ls",
     "pyright",
