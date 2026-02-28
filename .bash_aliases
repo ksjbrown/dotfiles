@@ -1,7 +1,7 @@
 alias cdd='cd ~/develop'
 alias g='git'
 alias gg='lazygit'
-alias l='ls -1'
+alias l='ls -1A'
 alias ll='ls -lhAF'
 alias po='poweroff'
 alias py='python3'
