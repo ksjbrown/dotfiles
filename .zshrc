@@ -4,13 +4,12 @@ HISTSIZE=1000
 SAVEHIST=1000
 PROMPT=$'%F{116}%~%f\n%# '
 
-zstyle :compinstall filename '/data/data/com.termux/files/home/.zshrc'
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 setopt extendedglob noautomenu nomatch share_history
 unsetopt autocd beep notify
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
 
+alias ls='ls --color=auto'
 source ~/.bash_aliases
