@@ -9,8 +9,6 @@
 	st = status
 	sw = switch
 	sh = show
-	p = pull
-	P = push
 	wt = worktree
 	m = merge
 [user]
