@@ -11,7 +11,7 @@ git clone git@github.com:ksjbrown/dotfiles.git ~/dotfiles
 
 # zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.bash_aliases ~/.bash_aliases
+ln -sf ~/dotfiles/.aliases ~/.aliases
 
 # git
 mkdir -p ~/.config/git
