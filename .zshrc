@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-PROMPT=$'%F{116}%~%f\n%# '
+PROMPT=$'%B%F{183}%~%f%b\n%# '
 
 autoload -Uz compinit
 compinit
