@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<leader>L", "<Cmd>Lazy<CR>", { desc = 'Lazy' })
 
 vim.keymap.set("n", "<leader>q", "<Cmd>qa<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<C-q>", "<Cmd>qa<CR>", { desc = "Quit" })
 
 vim.keymap.set("n", "<leader>bb", "<Cmd>b#<CR>", { desc = "Back" })
 vim.keymap.set("n", "<leader>bd", "<Cmd>Bdelete<CR>", { desc = "Delete" })
