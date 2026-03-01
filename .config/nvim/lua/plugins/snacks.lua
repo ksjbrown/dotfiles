@@ -23,6 +23,8 @@ return {
         { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
         { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
         { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
+        { "<leader>sd", function() Snacks.picker.diagnostics_buffer({focus = "list"}) end, desc = "Buffer Diagnostics" },
+        { "<leader>sD", function() Snacks.picker.diagnostics({focus = "list"}) end, desc = "Diagnostics" },
         { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
         { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
         { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
