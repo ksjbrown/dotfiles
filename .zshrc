@@ -8,7 +8,7 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-setopt extendedglob noautomenu nomatch share_history
+setopt extendedglob glob_dots noautomenu nomatch share_history
 unsetopt autocd beep notify
 
 alias ls='ls --color=auto'
