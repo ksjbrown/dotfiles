@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<leader>L", "<Cmd>Lazy<CR>", { desc = 'Lazy' })
 
 vim.keymap.set("n", "<leader>q", "<Cmd>qa<CR>", { desc = "Quit" })
+vim.keymap.set('n', '<leader>w', '<Cmd>w<CR>', { desc = "Save" })
 vim.keymap.set("n", "<C-q>", "<Cmd>qa<CR>", { desc = "Quit" })
 
 vim.keymap.set("n", "<leader>bb", "<Cmd>b#<CR>", { desc = "Back" })
@@ -10,14 +11,9 @@ vim.keymap.set('n', '<leader>br', '<Cmd>e!<CR>', { desc = "Reload" })
 vim.keymap.set('n', '<leader>bw', '<Cmd>w<CR>', { desc = "Save" })
 vim.keymap.set('n', '<C-s>', '<Cmd>w<CR>', { desc = "Save" })
 
-vim.keymap.set("n", "<leader>wd", "<Cmd>close<CR>", { desc = "Delete" })
-vim.keymap.set("n", "<leader>w+", "<Cmd>vsplit<CR>", { desc = "Split (Vertical)" })
-vim.keymap.set("n", "<leader>w-", "<Cmd>split<CR>", { desc = "Split (Horizontal)" })
-vim.keymap.set("n", "<leader>wn", "<Cmd>vnew<Bar>wincmd L<CR>", { desc = "New (Vertical)" })
-vim.keymap.set("n", "<leader>wh", "<C-W>H", { desc = "Move Left" })
-vim.keymap.set("n", "<leader>wj", "<C-W>J", { desc = "Move Down" })
-vim.keymap.set("n", "<leader>wk", "<C-W>K", { desc = "Move Up" })
-vim.keymap.set("n", "<leader>wl", "<C-W>L", { desc = "Move Right" })
+vim.keymap.set("n", "<leader>x", "<Cmd>close<CR>", { desc = "Delete" })
+vim.keymap.set("n", "<leader>+", "<Cmd>vsplit<CR>", { desc = "Split (Vertical)" })
+vim.keymap.set("n", "<leader>-", "<Cmd>split<CR>", { desc = "Split (Horizontal)" })
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
@@ -43,10 +39,10 @@ vim.keymap.set("n", "<Esc>", "<Cmd>nohlsearch<CR>", { desc = "Clear Search Highl
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and stay in visual mode" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and stay in visual mode" })
 
-vim.keymap.set({"n", "v"}, "<leader>.", vim.lsp.buf.code_action, { desc = "Action" })
+vim.keymap.set({ "n", "v" }, "<leader>.", vim.lsp.buf.code_action, { desc = "Action" })
 vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Action" })
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Diagnostics (Cursor)" })
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 
 vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
