@@ -26,7 +26,5 @@ alias v='nvim'
 
 alias tm='tmux new -A -s default'
 alias tn='tmux new -A -s'
-alias ta='tmux attach -t'
+alias ta='tmux attach'
 alias tl='tmux ls'
-alias tks='tmux kill-session -t'
-alias tkS='tmux kill-server'
