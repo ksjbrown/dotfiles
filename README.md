@@ -13,10 +13,6 @@ git clone git@github.com:ksjbrown/dotfiles.git ~/dotfiles
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.aliases ~/.aliases
 
-# git
-mkdir -p ~/.config/git
-ln -sf ~/dotfiles/.config/git/config ~/.config/git/config
-
 # lazygit
 mkdir -p ~/.config/lazygit
 ln -sf ~/dotfiles/.config/lazygit/config.yml ~/.config/lazygit/config.yml
