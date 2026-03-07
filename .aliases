@@ -21,7 +21,9 @@ alias gw='git worktree'
 alias l='ls -l'
 alias la='ls -A'
 alias ll='ls -lhA'
+
 alias v='nvim'
+
 alias tm='tmux new -A -s default'
 alias tn='tmux new -A -s'
 alias ta='tmux attach -t'
