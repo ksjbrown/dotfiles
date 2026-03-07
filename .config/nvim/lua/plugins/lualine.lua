@@ -28,7 +28,7 @@ return {
                 },
                 lualine_b = {
                     "branch",
-                    -- "diff",
+                    "diff",
                     "diagnostics",
                 },
                 lualine_c = {
@@ -54,31 +54,9 @@ return {
                 },
                 lualine_x = {
                     { "%S" },
-                    -- { "fileformat" },
                 },
-                lualine_y = {
-                    -- {
-                    --     "progress",
-                    --     -- separator = "",
-                    --     -- padding = {
-                    --     --     left = 1,
-                    --     --     right = 0,
-                    --     -- },
-                    -- },
-                    -- {
-                    --     "location",
-                    --     -- padding = {
-                    --     --     left = 1,
-                    --     --     right = 0,
-                    --     -- },
-                    -- },
-                },
-                lualine_z = {
-                    -- {
-                    --     "datetime",
-                    --     style = "%H:%M",
-                    -- },
-                },
+                lualine_y = {},
+                lualine_z = {},
             },
             inactive_sections = {
                 lualine_a = {},

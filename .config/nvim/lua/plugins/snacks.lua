@@ -33,7 +33,7 @@ return {
         { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
         { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
         { "<leader>uz", function() Snacks.zen.zoom() end, desc = "Zoom" },
-        { "<leader>cl", function() Snacks.picker.lsp_config() end, desc = "Goto Definition" },
+        { "<leader>cl", function() Snacks.picker.lsp_config({ focus = "list"}) end, desc = "Goto Definition" },
         { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
         { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
         { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
