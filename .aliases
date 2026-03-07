@@ -5,6 +5,7 @@ alias grep='grep --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
 # custom
 alias gg='lazygit'
 alias ga='git add'
