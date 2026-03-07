@@ -28,3 +28,5 @@ alias tm='tmux new -A -s default'
 alias tn='tmux new -A -s'
 alias ta='tmux attach'
 alias tl='tmux ls'
+
+alias ez='exec zsh'
