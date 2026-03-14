@@ -11,6 +11,7 @@ setopt glob_dots no_auto_menu
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey "^[[3~" delete-char
 
 # extended setup
 if [ -d ~/.zshrc.d ]; then
