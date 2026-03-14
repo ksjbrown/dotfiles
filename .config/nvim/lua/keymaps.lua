@@ -1,7 +1,6 @@
 vim.keymap.set("n", "<leader>L", "<Cmd>Lazy<CR>", { desc = 'Lazy' })
 
 vim.keymap.set("n", "<leader>q", "<Cmd>qa<CR>", { desc = "Quit" })
-vim.keymap.set('n', '<leader>w', '<Cmd>w<CR>', { desc = "Save" })
 vim.keymap.set("n", "<C-q>", "<Cmd>qa<CR>", { desc = "Quit" })
 
 vim.keymap.set("n", "<leader>bb", "<Cmd>b#<CR>", { desc = "Back" })
@@ -11,9 +10,9 @@ vim.keymap.set('n', '<leader>br', '<Cmd>e!<CR>', { desc = "Reload" })
 vim.keymap.set('n', '<leader>bw', '<Cmd>w<CR>', { desc = "Save" })
 vim.keymap.set('n', '<C-s>', '<Cmd>w<CR>', { desc = "Save" })
 
-vim.keymap.set("n", "<leader>x", "<Cmd>close<CR>", { desc = "Delete" })
-vim.keymap.set("n", "<leader>+", "<Cmd>vsplit<CR>", { desc = "Split (Vertical)" })
-vim.keymap.set("n", "<leader>-", "<Cmd>split<CR>", { desc = "Split (Horizontal)" })
+vim.keymap.set("n", "<leader>wd", "<Cmd>close<CR>", { desc = "Delete" })
+vim.keymap.set("n", "<leader>wv", "<Cmd>vsplit<CR>", { desc = "Split (Vertical)" })
+vim.keymap.set("n", "<leader>wh", "<Cmd>split<CR>", { desc = "Split (Horizontal)" })
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
