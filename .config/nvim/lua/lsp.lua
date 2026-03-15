@@ -1,3 +1,4 @@
+require("lspconfig")
 vim.diagnostic.config({
     virtual_text = {
         current_line = false,
