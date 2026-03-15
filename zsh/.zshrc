@@ -17,7 +17,7 @@ source $ZDOTDIR/.aliases
 
 # extended setup
 if [ -d $ZDOTDIR/scripts ]; then
-  for file in $ZDOTDIR/scripts/*.zsh; do
+    for file in $ZDOTDIR/scripts/*.zsh(N); do
     source "$file"
   done
 fi
