@@ -19,8 +19,6 @@ return {
                     "rust",
                 },
                 auto_install = true,
-                ignore_install = {},
-                modules = {},
                 sync_install = false,
                 highlight = {
                     enable = true,
