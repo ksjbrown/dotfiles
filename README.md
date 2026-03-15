@@ -8,17 +8,15 @@ Run below commands in zsh:
 git clone git@github.com:ksjbrown/dotfiles.git ~/dotfiles
 
 # zsh
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.aliases ~/.aliases
+echo 'export ZDOTDIR="$HOME/.config/zsh"' > ~/.zshenv
+ln -sf ~/dotfiles/zsh ~/.config/zshrc
 
 # lazygit
-ln -sf ~/dotfiles/.config/lazygit ~/.config/lazygit
+ln -sf ~/dotfiles/lazygit ~/.config/lazygit
 
 # nvim
-rm -rf ~/.config/nvim
-ln -sf ~/dotfiles/.config/nvim ~/.config/nvim
+ln -sf ~/dotfiles/nvim ~/.config/nvim
 
 # tmux
-mkdir -p ~/.config/tmux
-ln -sf ~/dotfiles/.config/tmux ~/.config/tmux
+ln -sf ~/dotfiles/tmux ~/.config/tmux
 ```

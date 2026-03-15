@@ -1,4 +1,4 @@
-HISTFILE=~/.histfile
+HISTFILE="$ZDOTDIR/.history"
 HISTSIZE=1000
 SAVEHIST=1000
 PROMPT=$'%B%F{183}%~%f%b\n%# '
@@ -13,11 +13,13 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
 
+source $ZDOTDIR/.aliases
+
 # extended setup
-if [ -d ~/.zshrc.d ]; then
-  for file in ~/.zshrc.d/*.sh; do
+if [ -d $ZDOTDIR/scripts ]; then
+  for file in $ZDOTDIR/scripts/*.zsh; do
     source "$file"
   done
 fi
 
-source ~/.aliases
+export PATH="$HOME/.local/bin:$PATH"

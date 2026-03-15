@@ -1,0 +1,5 @@
+.zcompdump*
+.history
+.zsh_sessions/
+.znap/
+custom/
