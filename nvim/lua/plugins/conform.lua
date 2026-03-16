@@ -1,3 +1,4 @@
+local prettier = { "prettierd", "prettier", stop_after_first = true }
 return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
@@ -9,7 +10,9 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
-			javascript = { "prettierd", "prettier", stop_after_first = true },
+			javascript = prettier,
+			typescript = prettier,
+			html = prettier,
 		},
 		default_format_opts = {
 			lsp_format = "fallback",
