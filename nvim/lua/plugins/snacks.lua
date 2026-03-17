@@ -81,6 +81,7 @@ return {
         })
     end,
     opts = {
+        bigfile = {},
         explorer = { replace_netrw = true },
         indent = {
             enabled = true,
