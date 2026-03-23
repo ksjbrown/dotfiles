@@ -56,6 +56,10 @@ return {
                         cond = function()
                             return require("ksj").lualine.navic
                         end,
+                        padding = {
+                            left = 0,
+                            right = 1,
+                        },
                     },
                 },
                 lualine_x = {
