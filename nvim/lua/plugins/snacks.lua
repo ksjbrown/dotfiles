@@ -51,7 +51,7 @@ return {
         Snacks.toggle.indent():map("<leader>ui")
         Snacks.toggle.inlay_hints():map("<leader>uh")
         Snacks.toggle.line_number():map("<leader>ul")
-        Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+        Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>uS")
         Snacks.toggle.option("expandtab", { name = "Tab" }):map("<leader>ut")
         Snacks.toggle.option("relativenumber", { name = "Relative Line Numbers" }):map("<leader>uL")
         Snacks.toggle.option("wrap", { name = "Word Wrap" }):map("<leader>uw")
@@ -67,6 +67,24 @@ return {
                 })
             end,
         }):map("<leader>ud")
+        Snacks.toggle.new({
+            name = "Statusline - Symbols",
+            get = function()
+                return require("ksj").lualine.navic
+            end,
+            set = function(state)
+                require("ksj").lualine.navic = state
+            end,
+        }):map("<leader>uss")
+        Snacks.toggle.new({
+            name = "Statusline - Progress",
+            get = function()
+                return require("ksj").lualine.progress
+            end,
+            set = function(state)
+                require("ksj").lualine.progress = state
+            end,
+        }):map("<leader>usp")
         -- prevent flashing in blink.cmp
         local group = vim.api.nvim_create_augroup("snacks_blink_compat", { clear = true })
         vim.api.nvim_create_autocmd("User", {

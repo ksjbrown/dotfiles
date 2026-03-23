@@ -17,7 +17,7 @@ return {
             options = {
                 theme = "catppuccin-nvim",
                 section_separators = { left = '', right = '' },
-                component_separators = { left = '', right = '' }
+                component_separators = { left = '', right = '' },
             },
             sections = {
                 lualine_a = {
@@ -29,34 +29,62 @@ return {
                 lualine_b = {
                     "branch",
                     "diff",
-                    "diagnostics",
+                    {
+                        "diagnostics",
+                        padding = {
+                            left = 0,
+                            right = 1,
+                        },
+                        symbols = {
+                            error = '󰅚',
+                            warn  = '󰀪',
+                            info  = '󰋽',
+                            hint  = '󰌶',
+                        }
+                    },
                 },
                 lualine_c = {
                     {
+                        "filename",
+                        file_status = true,
+                        newfile_status = true,
+                        path = 0,
+                    },
+                    {
+                        "navic",
+                        color_correction = "static",
+                        cond = function()
+                            return require("ksj").lualine.navic
+                        end,
+                    },
+                },
+                lualine_x = {
+                    "%S",
+                    {
                         "filetype",
-                        separator = "",
                         icon_only = true,
                         padding = {
                             left = 1,
                             right = 0,
                         },
                     },
+                },
+                lualine_y = {
                     {
-                        "filename",
-                        file_status = true,
-                        path = 1,
-                        separator = ":",
-                    },
-                    {
-                        "navic",
-                        color_correction = "static",
+                        "progress",
+                        cond = function()
+                            return require("ksj").lualine.progress
+                        end,
                     },
                 },
-                lualine_x = {
-                    { "%S" },
+                lualine_z = {
+                    {
+                        "location",
+                        cond = function()
+                            return require("ksj").lualine.progress
+                        end,
+                    },
                 },
-                lualine_y = {},
-                lualine_z = {},
             },
             inactive_sections = {
                 lualine_a = {},
