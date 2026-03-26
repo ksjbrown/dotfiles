@@ -16,8 +16,6 @@ return {
         opts = {
             options = {
                 theme = "catppuccin-nvim",
-                section_separators = { left = '', right = '' },
-                component_separators = { left = '', right = '' },
             },
             sections = {
                 lualine_a = {
@@ -26,28 +24,10 @@ return {
                         fmt = function(res) return res:sub(1, 1) end,
                     },
                 },
-                lualine_b = {
-                    "branch",
-                    "diff",
-                    {
-                        "diagnostics",
-                        padding = {
-                            left = 0,
-                            right = 1,
-                        },
-                        symbols = {
-                            error = '󰅚',
-                            warn  = '󰀪',
-                            info  = '󰋽',
-                            hint  = '󰌶',
-                        }
-                    },
-                },
                 lualine_c = {
                     {
                         "filename",
                         file_status = true,
-                        newfile_status = true,
                         path = 0,
                     },
                     {
@@ -56,32 +36,26 @@ return {
                         cond = function()
                             return require("ksj").lualine.navic
                         end,
-                        padding = {
-                            left = 0,
-                            right = 1,
-                        },
                     },
                 },
-                lualine_x = {
-                    "%S",
+                lualine_x = { "%S" },
+                lualine_y = {
                     {
                         "filetype",
                         icon_only = true,
                         padding = {
                             left = 1,
                             right = 0,
-                        },
+                        }
                     },
                 },
-                lualine_y = {
+                lualine_z = {
                     {
                         "progress",
                         cond = function()
                             return require("ksj").lualine.progress
                         end,
                     },
-                },
-                lualine_z = {
                     {
                         "location",
                         cond = function()
@@ -105,6 +79,7 @@ return {
         opts = {
             highlight = true,
             lsp = { auto_attach = true, },
+            separator = " ",
         },
     },
 }

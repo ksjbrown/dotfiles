@@ -25,8 +25,6 @@ return {
             },
             menu = {
                 auto_show = false,
-                winhighlight =
-                "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
             },
         },
         fuzzy = {
@@ -40,9 +38,17 @@ return {
         },
         keymap = {
             preset = "default",
-            ["<Tab>"] = { "accept", "snippet_forward", "fallback" },
-            ["<Enter>"] = { "snippet_forward", "fallback" },
-            ["<Backspace>"] = { "snippet_backward", "fallback" },
+            ["<Tab>"] = { "select_next", "accept", "fallback" },
+            ["<S-Tab>"] = { "select_prev" },
+            ["<Enter>"] = {
+                function (cmp)
+                    if cmp.is_menu_visible() then
+                        cmp.accept()
+                        return true
+                    end
+                end,
+                "fallback",
+            },
             ["<C-k>"] = { "show_documentation", "hide_documentation", "fallback" }
         },
         signature = {
@@ -51,17 +57,8 @@ return {
                 show_documentation = false,
             }
         },
-        snippets = {
-            preset = "default",
-        },
         sources = {
-            providers = {
-                snippets = {
-                    opts = {
-                        friendly_snippets = true,
-                    }
-                }
-            }
+            default = { 'lsp', 'buffer' },
         }
     },
 }
