@@ -2,7 +2,10 @@
 
 app-notifications = no-clipboard-copy
 copy-on-select = clipboard
+cursor-style = block
+font-size = 14
 gtk-titlebar-hide-when-maximized = true
 selection-clear-on-copy = true
-theme = catppuccin-mocha.conf
+shell-integration-features = no-cursor
+theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 title = "Terminal"
