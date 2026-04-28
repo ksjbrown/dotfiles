@@ -92,10 +92,6 @@ return {
     opts = {
         bigfile = {},
         explorer = { replace_netrw = true },
-        indent = {
-            enabled = true,
-            animate = { enabled = false },
-        },
         lazygit = {},
         picker = {
             sources = {

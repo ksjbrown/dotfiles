@@ -1,9 +1,20 @@
 HISTFILE="$ZDOTDIR/.history"
 HISTSIZE=1000
 SAVEHIST=1000
-PROMPT=$'%B%F{13}%~%f%b\n%# '
 
-autoload -Uz compinit && compinit
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '(%F{cyan}%b%f%u%c)'
+zstyle ':vcs_info:git:*' actionformats '(%F{cyan}%b%f|%F{red}%a%f%u%c)'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '%F{red}*%f'
+zstyle ':vcs_info:*' stagedstr '%F{green}+%f'
+
+setopt PROMPT_SUBST
+PROMPT='%B%F{13}%~%f%b ${vcs_info_msg_0_}
+%# '
+
+autoload -Uz compinit && compinit 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' ignore-parents parent pwd
 
