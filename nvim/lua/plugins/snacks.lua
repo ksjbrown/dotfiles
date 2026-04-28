@@ -68,15 +68,6 @@ return {
             end,
         }):map("<leader>ud")
         Snacks.toggle.new({
-            name = "Statusline - Symbols",
-            get = function()
-                return require("ksj").lualine.navic
-            end,
-            set = function(state)
-                require("ksj").lualine.navic = state
-            end,
-        }):map("<leader>uss")
-        Snacks.toggle.new({
             name = "Statusline - Progress",
             get = function()
                 return require("ksj").lualine.progress
@@ -84,7 +75,7 @@ return {
             set = function(state)
                 require("ksj").lualine.progress = state
             end,
-        }):map("<leader>usp")
+        }):map("<leader>up")
         -- prevent flashing in blink.cmp
         local group = vim.api.nvim_create_augroup("snacks_blink_compat", { clear = true })
         vim.api.nvim_create_autocmd("User", {
