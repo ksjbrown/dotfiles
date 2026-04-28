@@ -1,10 +1,8 @@
 # https://ghostty.zerebos.com/
 
 app-notifications = no-clipboard-copy
-background-opacity = 0.75
 copy-on-select = clipboard
 gtk-titlebar-hide-when-maximized = true
-font-family = "Hack Nerd Font Mono"
 selection-clear-on-copy = true
 theme = catppuccin-mocha.conf
 title = "Terminal"
