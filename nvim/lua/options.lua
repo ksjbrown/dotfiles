@@ -14,7 +14,7 @@ vim.opt.listchars = { tab = "→ ", space = "·", extends = ">", precedes = "<",
 vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.numberwidth = 2        -- line number column width
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.scrolloff = 8
 vim.opt.smartcase = true
 vim.opt.shiftwidth = 4   -- number of spaces per indentation
