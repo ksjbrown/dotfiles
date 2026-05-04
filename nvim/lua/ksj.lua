@@ -2,5 +2,8 @@
 return {
     lualine = {
         progress = true,
+    },
+    blink = {
+        use_minuet = false,
     }
 }
