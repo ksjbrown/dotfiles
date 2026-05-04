@@ -1,3 +1,4 @@
+-- blink.cmp configuration: autocompletion plugin with LSP and AI (minuet) support
 -- https://cmp.saghen.dev/
 local default_sources = { "lsp" }
 
@@ -55,14 +56,6 @@ return {
                 "fallback",
             },
             ["<C-k>"] = { "show_documentation", "hide_documentation", "fallback" },
-            ['<C-Space>'] = { function(cmp)
-                local providers = vim.deepcopy(default_sources)
-                if (require("ksj").blink.use_minuet) then
-                    providers = { unpack(providers), "minuet" }
-                end
-                cmp.show({ providers = providers })
-            end },
-
         },
         signature = {
             enabled = true,
@@ -71,8 +64,17 @@ return {
             },
         },
         sources = {
-            default = default_sources,
-            -- For manual completion only, remove 'minuet' from default
+            per_filetype = {
+                codecompanion = { "codecompanion" },
+            },
+            default = function()
+                local default = { "lsp" }
+                local use_ai = require("ksj").ai.enabled
+                if (not use_ai) then
+                    return default
+                end
+                return { unpack(default), "minuet" }
+            end,
             providers = {
                 minuet = {
                     name = "minuet",
