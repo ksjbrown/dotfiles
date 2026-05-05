@@ -1,14 +1,7 @@
--- blink.cmp configuration: autocompletion plugin with LSP and AI (minuet) support
--- https://cmp.saghen.dev/
-local default_sources = { "lsp" }
-
 return {
     "saghen/blink.cmp",
     version = "1.*",
     event = { "InsertEnter", "CmdlineEnter" },
-    dependencies = {
-        "milanglacier/minuet-ai.nvim",
-    },
     opts = {
         cmdline = {
             enabled = true,
@@ -55,6 +48,11 @@ return {
                 end,
                 "fallback",
             },
+            ["<M-Space>"] = { 
+                function(cmp)
+                    return cmp.show({ providers = { "buffer" } })
+                end,
+            },
             ["<C-k>"] = { "show_documentation", "hide_documentation", "fallback" },
         },
         signature = {
@@ -67,32 +65,7 @@ return {
             per_filetype = {
                 codecompanion = { "codecompanion" },
             },
-            default = function()
-                local default = { "lsp" }
-                local use_ai = require("ksj").ai.enabled
-                if (not use_ai) then
-                    return default
-                end
-                return { unpack(default), "minuet" }
-            end,
-            providers = {
-                minuet = {
-                    name = "minuet",
-                    module = "minuet.blink",
-                    async = true,
-                    -- Should match minuet.config.request_timeout * 1000,
-                    -- since minuet.config.request_timeout is in seconds
-                    timeout_ms = 3000,
-                    score_offset = 50, -- Gives minuet higher priority among suggestions
-                    transform_items = function(ctx, items)
-                        for _, item in ipairs(items) do
-                            item.kind_icon = ''
-                            item.kind_name = 'minuet'
-                        end
-                        return items
-                    end
-                },
-            },
+            default = { "lsp" },
         },
     },
 }

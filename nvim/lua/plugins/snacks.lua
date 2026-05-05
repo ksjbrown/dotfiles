@@ -46,15 +46,6 @@ return {
         local Snacks = require("snacks")
         Snacks.setup(opts)
         Snacks.toggle.animate():map("<leader>uA")
-        Snacks.toggle.new({
-            name = "AI Completion",
-            get = function()
-                return require("ksj").ai.enabled
-            end,
-            set = function(value)
-                require("ksj").ai.enabled = value
-            end,
-        }):map("<leader>ua")
         Snacks.toggle.diagnostics():map("<leader>uD")
         Snacks.toggle.dim():map("<leader>uf")
         Snacks.toggle.indent():map("<leader>ui")

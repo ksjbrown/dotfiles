@@ -3,7 +3,4 @@ return {
     lualine = {
         progress = true,
     },
-    ai = {
-        enabled = false,
-    }
 }
