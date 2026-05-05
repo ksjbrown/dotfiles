@@ -1,0 +1,25 @@
+[core]
+    editor = nvim
+    pager = delta --line-numbers
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    syntax-theme = none
+    minus-style = brightred
+    minus-non-emph-style = brightred
+    minus-emph-style = red reverse
+    plus-style = brightgreen
+    plus-non-emph-style = brightgreen
+    plus-emph-style = brightgreen reverse
+    line-numbers-minus-style = brightred
+    line-numbers-plus-style = brightgreen
+    navigate = true    # use n and N to move between diff sections
+    file-style = brightyellow bold
+    file-decoration-style = none
+    hunk-header-style = omit
+    hunk-header-decoration-style = none
+
+[merge]
+    conflictStyle = zdiff3

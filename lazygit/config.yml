@@ -24,3 +24,7 @@ gui:
 #     '*': '#b4befe'
 os:
   editPreset: 'nvim'
+git:
+  pagers:
+    - pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+      colorArg: always
