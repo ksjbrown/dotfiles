@@ -3,6 +3,8 @@ vim.keymap.set("n", "<leader>L", "<Cmd>Lazy<CR>", { desc = 'Lazy: Open plugin ma
 vim.keymap.set("n", "<leader>q", "<Cmd>qa<CR>", { desc = "Quit all windows" })
 vim.keymap.set("n", "<C-q>", "<Cmd>qa<CR>", { desc = "Quit all windows" })
 
+vim.keymap.set("n", "<leader>pp", function () vim.notify(vim.fn.expand('%:.')) end, { desc = "Print (File) Path" })
+
 vim.keymap.set("n", "<leader>bb", "<Cmd>b#<CR>", { desc = "Buffer: Switch to previous" })
 vim.keymap.set("n", "<leader>bd", "<Cmd>Bdelete<CR>", { desc = "Buffer: Delete current buffer" })
 vim.keymap.set("n", "<leader>bn", "<Cmd>enew<CR>", { desc = "Buffer: Create new empty buffer" })
