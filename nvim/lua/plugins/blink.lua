@@ -8,10 +8,6 @@ return {
             keymap = { preset = "inherit" },
         },
         completion = {
-            documentation = {
-                auto_show = true,
-                auto_show_delay_ms = 500,
-            },
             ghost_text = {
                 enabled = true,
                 show_with_menu = true,
@@ -37,8 +33,7 @@ return {
         },
         keymap = {
             preset = "default",
-            ["<Tab>"] = { "select_next", "accept", "fallback" },
-            ["<S-Tab>"] = { "select_prev" },
+            ["<Tab>"] = { "accept", "fallback" },
             ["<Enter>"] = {
                 function(cmp)
                     if cmp.is_menu_visible() then
@@ -48,12 +43,6 @@ return {
                 end,
                 "fallback",
             },
-            ["<M-Space>"] = { 
-                function(cmp)
-                    return cmp.show({ providers = { "buffer" } })
-                end,
-            },
-            ["<C-k>"] = { "show_documentation", "hide_documentation", "fallback" },
         },
         signature = {
             enabled = true,
@@ -65,7 +54,8 @@ return {
             per_filetype = {
                 codecompanion = { "codecompanion" },
             },
-            default = { "lsp" },
+            default = { "lsp", "buffer" },
+
         },
     },
 }
