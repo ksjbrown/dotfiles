@@ -60,3 +60,10 @@ vim.api.nvim_create_autocmd({ "WinLeave" }, {
 -- Key options
 vim.g.mapleader = " " -- leader key
 vim.g.maplocalleader = "\\"
+
+-- Android (Termux) specific options
+local is_termux = (vim.env.TERMUX_VERSION ~= nil)
+if is_termux then
+    require("ksj").lualine.progress = false
+    vim.opt.number = false
+end
