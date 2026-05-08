@@ -2,18 +2,15 @@
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
-        "folke/noice.nvim",
         "nvim-tree/nvim-web-devicons",
         "catppuccin/nvim",
     },
     lazy = false,
-    init = function()
+    config = function (_, opts)
         vim.opt.laststatus = 3
         vim.opt.showcmd = true
         vim.opt.showcmdloc = "statusline"
-    end,
-    config = function (_, opts)
-        -- instant refresh on recording state change
+        require("lualine").setup(opts)
         vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
             callback = function()
                 vim.defer_fn(function()
@@ -21,7 +18,6 @@ return {
                 end, 50)
             end,
         })
-        require("lualine").setup(opts)
     end,
     opts = {
         options = {

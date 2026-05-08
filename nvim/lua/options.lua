@@ -63,4 +63,4 @@ vim.api.nvim_create_autocmd({ "WinLeave" }, {
 
 -- Key options
 vim.g.mapleader = " " -- leader key
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
