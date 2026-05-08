@@ -102,7 +102,6 @@ return {
                 },
             },
         },
-        scroll = {},
         styles = {
             lazygit = { height = 0, width = 0 },
         },

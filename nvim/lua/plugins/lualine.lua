@@ -22,6 +22,12 @@ return {
                     fmt = function(res) return res:sub(1, 1) end,
                 },
             },
+            lualine_c = {
+                {
+                    "filename",
+                    path = require("ksj").lualine.path,
+                },
+            },
             lualine_x = {
                 { "%S", separator = "",},
                 { "filetype", icon_only = true },

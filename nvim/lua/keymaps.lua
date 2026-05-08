@@ -10,6 +10,7 @@ vim.keymap.set("n", "<leader>bd", "<Cmd>Bdelete<CR>", { desc = "Buffer: Delete c
 vim.keymap.set("n", "<leader>bn", "<Cmd>enew<CR>", { desc = "Buffer: Create new empty buffer" })
 vim.keymap.set('n', '<leader>br', '<Cmd>e!<CR>', { desc = "Buffer: Reload file from disk" })
 vim.keymap.set('n', '<leader>bw', '<Cmd>w<CR>', { desc = "Buffer: Save to file" })
+vim.keymap.set('n', '<leader>bW', '<Cmd>wa<CR>', { desc = "Buffer: Save all to file" })
 vim.keymap.set('n', '<C-s>', '<Cmd>w<CR>', { desc = "Save current file" })
 vim.keymap.set('n', '<leader>!', '<Cmd>e!<CR>', { desc = "Buffer: Discard changes and reload" })
 
