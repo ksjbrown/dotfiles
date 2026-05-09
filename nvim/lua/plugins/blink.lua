@@ -33,7 +33,15 @@ return {
         },
         keymap = {
             preset = "default",
-            ["<Esc>"] = { "hide", "fallback"}, 
+            ["<Esc>"] = {
+                function(cmp)
+                    if cmp.is_menu_visible() then
+                        cmp.hide()
+                        return true
+                    end
+                end,
+                "fallback",
+            },
             ["<Tab>"] = { "accept", "fallback" },
             ["<Enter>"] = {
                 function(cmp)
