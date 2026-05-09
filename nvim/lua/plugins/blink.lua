@@ -33,6 +33,7 @@ return {
         },
         keymap = {
             preset = "default",
+            ["<Esc>"] = { "hide", "fallback"}, 
             ["<Tab>"] = { "accept", "fallback" },
             ["<Enter>"] = {
                 function(cmp)

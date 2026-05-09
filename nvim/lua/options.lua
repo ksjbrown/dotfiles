@@ -43,7 +43,7 @@ vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight text after yanking",
     callback = function()
-        vim.highlight.on_yank()
+        vim.highlight.on_yank({timeout = 200})
     end,
 })
 local cursorline_group = vim.api.nvim_create_augroup("ActiveCursorLine", { clear = true })
