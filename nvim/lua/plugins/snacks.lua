@@ -92,12 +92,16 @@ return {
     opts = {
         bigfile = {},
         explorer = { replace_netrw = true },
+        input = { enabled = false },
         lazygit = {},
         picker = {
+            layout = {
+                backdrop = false,
+            },
             sources = {
                 explorer = {
                     auto_close = true,
-                    layout = { preset = "default", preview = true },
+                    layout = { preset = "default", preview = true, backdrop = false, },
                     hidden = true,
                 },
             },

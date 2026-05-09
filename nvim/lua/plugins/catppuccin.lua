@@ -9,8 +9,7 @@ return {
 		vim.cmd.colorscheme "catppuccin-nvim"
 	end,
     opts = {
-        integrations = {
-            notify = true,
-        },
+        auto_integrations = true,
+        no_italic = true,
     },
 }

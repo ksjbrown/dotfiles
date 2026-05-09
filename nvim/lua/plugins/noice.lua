@@ -3,18 +3,11 @@ return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
-		presets = {
-			bottom_search = true,
-			lsp_doc_border = true,
-		},
-		cmdline = {
-			view = "cmdline",
-			format = {
-				input = {
-					view = "cmdline",
-				},
-			},
-		},
+        presets = {
+            command_palette = true,
+            bottom_search = true,
+            lsp_doc_border = true,
+        },
 		lsp = {
 			signature = {
 				enabled = false,
