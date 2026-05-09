@@ -1,5 +1,5 @@
 vim.opt.autoindent = true
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = ""
 vim.opt.completeopt = { "menu" }
 vim.opt.confirm = true
 vim.opt.cursorline = true
@@ -34,33 +34,32 @@ vim.opt.undofile = true
 vim.opt.updatetime = 200
 vim.opt.writebackup = false
 vim.opt.winborder = "rounded"
-vim.opt.wrap = false -- don't wrap lines
+vim.opt.wrap = false
 
 -- IDE
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 
 -- Autocommands
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight text after yanking",
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    desc = "Highlight text after yanking",
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
--- only show cursorline in active window
 local cursorline_group = vim.api.nvim_create_augroup("ActiveCursorLine", { clear = true })
 vim.api.nvim_create_autocmd({ "WinEnter" }, {
-	group = cursorline_group,
-	callback = function()
-		vim.wo.cursorline = true
-	end,
+    desc = "only show cursorline in active windoww",
+    group = cursorline_group,
+    callback = function()
+        vim.wo.cursorline = true
+    end,
 })
 vim.api.nvim_create_autocmd({ "WinLeave" }, {
-	group = cursorline_group,
-	callback = function()
-		vim.wo.cursorline = false
-	end,
+    desc = "only show cursorline in active windoww",
+    group = cursorline_group,
+    callback = function()
+        vim.wo.cursorline = false
+    end,
 })
-
--- Key options
-vim.g.mapleader = " " -- leader key
+vim.g.mapleader = " "
 vim.g.maplocalleader = " "
