@@ -1,54 +1,265 @@
-vim.keymap.set("n", "<leader>L", "<Cmd>Lazy<CR>", { desc = 'Lazy: Open plugin manager' })
+local keymaps = {
+    {
+        modes = { "n" },
+        mappings = {
+            {
+                "<leader>L",
+                "<Cmd>Lazy<CR>",
+                desc = "Lazy: Open plugin manager",
+            },
 
-vim.keymap.set("n", "<leader>q", "<Cmd>qa<CR>", { desc = "Quit all windows" })
-vim.keymap.set("n", "<C-q>", "<Cmd>qa<CR>", { desc = "Quit all windows" })
+            {
+                "<leader>q",
+                "<Cmd>qa<CR>",
+                desc = "Quit all windows",
+            },
+            {
+                "<C-q>",
+                "<Cmd>qa<CR>",
+                desc = "Quit all windows",
+            },
+            {
+                "<C-s>",
+                "<Cmd>w<CR>",
+                desc = "Save current file",
+            },
 
-vim.keymap.set("n", "<leader>pp", function () vim.notify(vim.fn.expand('%:.')) end, { desc = "Print (File) Path" })
+            {
+                "<Esc>",
+                "<Cmd>nohlsearch<CR>",
+                desc = "Clear search highlights",
+            },
 
-vim.keymap.set("n", "<leader>bb", "<Cmd>b#<CR>", { desc = "Buffer: Switch to previous" })
-vim.keymap.set("n", "<leader>bd", "<Cmd>Bdelete<CR>", { desc = "Buffer: Delete current buffer" })
-vim.keymap.set("n", "<leader>bn", "<Cmd>enew<CR>", { desc = "Buffer: Create new empty buffer" })
-vim.keymap.set('n', '<leader>br', '<Cmd>e!<CR>', { desc = "Buffer: Reload file from disk" })
-vim.keymap.set('n', '<leader>bw', '<Cmd>wa<CR>', { desc = "Buffer: Save to file" })
-vim.keymap.set('n', '<C-s>', '<Cmd>w<CR>', { desc = "Save current file" })
-vim.keymap.set('n', '<leader>!', '<Cmd>e!<CR>', { desc = "Buffer: Discard changes and reload" })
+            {
+                "<leader>bb",
+                "<Cmd>b#<CR>",
+                desc = "Buffer: Switch to previous",
+            },
+            {
+                "<leader>bd",
+                "<Cmd>Bdelete<CR>",
+                desc = "Buffer: Delete current buffer",
+            },
+            {
+                "<leader>bn",
+                "<Cmd>enew<CR>",
+                desc = "Buffer: Create new empty buffer",
+            },
+            {
+                "<leader>br",
+                "<Cmd>e!<CR>",
+                desc = "Buffer: Reload file from disk",
+            },
+            {
+                "<leader>bw",
+                "<Cmd>wa<CR>",
+                desc = "Buffer: Save to file",
+            },
+            {
+                "<leader>!",
+                "<Cmd>e!<CR>",
+                desc = "Buffer: Discard changes and reload",
+            },
 
-vim.keymap.set("n", "<leader>wd", "<Cmd>close<CR>", { desc = "Window: Close current" })
-vim.keymap.set("n", "<leader>wv", "<Cmd>vsplit<CR>", { desc = "Window: Split vertically" })
-vim.keymap.set("n", "<leader>wh", "<Cmd>split<CR>", { desc = "Window: Split horizontally" })
-vim.keymap.set("n", "<leader>wH", "<C-w>H", { desc = "Window: Move Left" })
-vim.keymap.set("n", "<leader>wJ", "<C-w>J", { desc = "Window: Move Down" })
-vim.keymap.set("n", "<leader>wK", "<C-w>K", { desc = "Window: Move Up" })
-vim.keymap.set("n", "<leader>wL", "<C-w>L", { desc = "Window: Move Right" })
+            {
+                "<leader>wd",
+                "<Cmd>close<CR>",
+                desc = "Window: Close current",
+            },
+            {
+                "<leader>wv",
+                "<Cmd>vsplit<CR>",
+                desc = "Window: Split vertically",
+            },
+            {
+                "<leader>wh",
+                "<Cmd>split<CR>",
+                desc = "Window: Split horizontally",
+            },
+            {
+                "<leader>wH",
+                "<C-w>H",
+                desc = "Window: Move Left",
+            },
+            {
+                "<leader>wJ",
+                "<C-w>J",
+                desc = "Window: Move Down",
+            },
+            {
+                "<leader>wK",
+                "<C-w>K",
+                desc = "Window: Move Up",
+            },
+            {
+                "<leader>wL",
+                "<C-w>L",
+                desc = "Window: Move Right",
+            },
 
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Window: Navigate to left pane" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Window: Navigate to lower pane" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Window: Navigate to upper pane" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Window: Navigate to right pane" })
-vim.keymap.set("n", "<C-Up>", "<Cmd>resize +2<CR>", { desc = "Window: Increase height" })
-vim.keymap.set("n", "<C-Down>", "<Cmd>resize -2<CR>", { desc = "Window: Decrease height" })
-vim.keymap.set("n", "<C-Left>", "<Cmd>vertical resize -2<CR>", { desc = "Window: Decrease width" })
-vim.keymap.set("n", "<C-Right>", "<Cmd>vertical resize +2<CR>", { desc = "Window: Increase width" })
+            {
+                "<C-h>",
+                "<C-w>h",
+                desc = "Window: Navigate to left pane",
+            },
+            {
+                "<C-j>",
+                "<C-w>j",
+                desc = "Window: Navigate to lower pane",
+            },
+            {
+                "<C-k>",
+                "<C-w>k",
+                desc = "Window: Navigate to upper pane",
+            },
+            {
+                "<C-l>",
+                "<C-w>l",
+                desc = "Window: Navigate to right pane",
+            },
 
-vim.keymap.set("n", "<M-j>", "<Cmd>execute 'move .+' . v:count1<CR>", { desc = "Move current line(s) down" })
-vim.keymap.set("n", "<M-k>", "<Cmd>execute 'move .-' . (v:count1 + 1)<CR>", { desc = "Move current line(s) up" })
-vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected line(s) down", silent = true })
-vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected line(s) up", silent = true })
+            {
+                "<C-Up>",
+                "<Cmd>resize +2<CR>",
+                desc = "Window: Increase height",
+            },
+            {
+                "<C-Down>",
+                "<Cmd>resize -2<CR>",
+                desc = "Window: Decrease height",
+            },
+            {
+                "<C-Left>",
+                "<Cmd>vertical resize -2<CR>",
+                desc = "Window: Decrease width",
+            },
+            {
+                "<C-Right>",
+                "<Cmd>vertical resize +2<CR>",
+                desc = "Window: Increase width",
+            },
 
-vim.keymap.set({ 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, desc = "Navigate screen lines (wrap-aware)" })
-vim.keymap.set({ 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, desc = "Navigate screen lines (wrap-aware)" })
-vim.keymap.set("n", "<M-h>", "10zh", { desc = "Horizontal scroll: View left (10 cols)" })
-vim.keymap.set("n", "<M-l>", "10zl", { desc = "Horizontal scroll: View right (10 cols)" })
-vim.keymap.set("n", "<M-H>", "zH", { desc = "Horizontal scroll: View left (half screen)" })
-vim.keymap.set("n", "<M-L>", "zL", { desc = "Horizontal scroll: View right (half screen)" })
-vim.keymap.set("n", "<Esc>", "<Cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
-vim.keymap.set("v", "<", "<gv", { desc = "Visual: Dedent and reselect" })
-vim.keymap.set("v", ">", ">gv", { desc = "Visual: Indent and reselect" })
+            {
+                "<M-j>",
+                "<Cmd>execute 'move .+' . v:count1<CR>",
+                desc = "Move current line(s) down",
+            },
+            {
+                "<M-k>",
+                "<Cmd>execute 'move .-' . (v:count1 + 1)<CR>",
+                desc = "Move current line(s) up",
+            },
 
-vim.keymap.set({ "n", "v" }, "<leader>.", vim.lsp.buf.code_action, { desc = "LSP: Show code actions" })
-vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "LSP: Rename symbol under cursor" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Show code actions" })
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Diagnostics: Show under cursor" })
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP: Rename symbol under cursor" })
+            {
+                "<M-h>",
+                "8zh",
+                desc = "Horizontal scroll: View left (10 cols)",
+            },
+            {
+                "<M-l>",
+                "8zl",
+                desc = "Horizontal scroll: View right (10 cols)",
+            },
+            {
+                "<M-H>",
+                "zH",
+                desc = "Horizontal scroll: View left (half screen)",
+            },
+            {
+                "<M-L>",
+                "zL",
+                desc = "Horizontal scroll: View right (half screen)",
+            },
+        },
+    },
+    {
+        modes = { "v" },
+        mappings = {
+            {
+                "<M-j>",
+                ":m '>+1<CR>gv=gv",
+                desc = "Move selected line(s) down",
+                silent = true,
+            },
+            {
+                "<M-k>",
+                ":m '<-2<CR>gv=gv",
+                desc = "Move selected line(s) up",
+                silent = true,
+            },
 
-vim.keymap.set({ 'n', 'x' }, 's', '<Nop>', { desc = "Disable 's' (substitute character)" })
+            {
+                "<",
+                "<gv",
+                desc = "Visual: Dedent and reselect",
+            },
+            {
+                ">",
+                ">gv",
+                desc = "Visual: Indent and reselect",
+            },
+        },
+    },
+    {
+        modes = { "n", "v" },
+        mappings = {
+            {
+                "j",
+                "v:count == 0 ? 'gj' : 'j'",
+                desc = "Navigate screen lines (wrap-aware)",
+                expr = true,
+            },
+            {
+                "k",
+                "v:count == 0 ? 'gk' : 'k'",
+                desc = "Navigate screen lines (wrap-aware)",
+                expr = true,
+            },
+
+            {
+                "<F2>",
+                vim.lsp.buf.rename,
+                desc = "LSP: Rename symbol under cursor",
+            },
+            {
+                "<leader>.",
+                vim.lsp.buf.code_action,
+                desc = "LSP: Show code actions",
+            },
+            {
+                "<leader>ca",
+                vim.lsp.buf.code_action,
+                desc = "LSP: Show code actions",
+            },
+            {
+                "<leader>cd",
+                vim.diagnostic.open_float,
+                desc = "Diagnostics: Show under cursor",
+            },
+            {
+                "<leader>cr",
+                vim.lsp.buf.rename,
+                desc = "LSP: Rename symbol under cursor",
+            },
+        },
+    },
+    {
+        modes = { "n", "x" },
+        mappings = {
+            {
+                "s",
+                "<Nop>",
+                desc = "Disable 's' (substitute character)",
+            },
+        },
+    },
+}
+
+for _, group in ipairs(keymaps) do
+    for _, mapping in ipairs(group.mappings) do
+        local opts = { desc = mapping.desc }
+        if mapping.expr then opts.expr = true end
+        if mapping.silent then opts.silent = true end
+        vim.keymap.set(group.modes, mapping[1], mapping[2], opts)
+    end
+end

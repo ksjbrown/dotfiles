@@ -1,6 +1,5 @@
 vim.opt.autoindent = true
 vim.opt.clipboard = ""
-vim.opt.completeopt = { "menu" }
 vim.opt.confirm = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number,line"
@@ -36,9 +35,6 @@ vim.opt.writebackup = false
 vim.opt.winborder = "rounded"
 vim.opt.wrap = false
 
--- IDE
-vim.opt.completeopt = { "menu", "menuone", "noinsert" }
-
 -- Autocommands
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight text after yanking",
@@ -61,5 +57,6 @@ vim.api.nvim_create_autocmd({ "WinLeave" }, {
         vim.wo.cursorline = false
     end,
 })
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

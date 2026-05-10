@@ -14,13 +14,6 @@ vim.diagnostic.config({
     severity_sort = true,
     float = {
         border = "rounded",
-        format = function(d)
-            return ("%s (%s) [%s]"):format(d.message, d.source, d.code or d.user_data.lsp.code)
-        end,
-    },
-    underline = true,
-    jump = {
-        float = true,
     },
 })
 vim.lsp.config('*', {
@@ -31,7 +24,6 @@ vim.lsp.config('*', {
             }
         }
     },
-    root_markers = { '.git' },
 })
 vim.lsp.enable({
     "angularls",
