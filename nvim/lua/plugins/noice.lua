@@ -21,6 +21,15 @@ return {
                 enabled = false,
             },
         },
+        routes = {
+            {
+                filter = {
+                    event = "msg_show",
+                    kind = "confirm",
+                },
+                view = "cmdline",
+            },
+        },
     },
     keys = {
         { "<leader>nn", "<Cmd>Noice<CR>",        desc = "Show" },
