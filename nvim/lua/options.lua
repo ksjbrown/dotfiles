@@ -12,7 +12,7 @@ vim.opt.incsearch = true
 vim.opt.list = false
 vim.opt.listchars = { tab = "→ ", space = "·", extends = ">", precedes = "<", eol = "↴" }
 vim.opt.mouse = "a"
-vim.opt.number = require("ksj").options.line_numbers
+vim.opt.number = true
 vim.opt.numberwidth = 2
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 8

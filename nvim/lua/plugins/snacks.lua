@@ -17,7 +17,6 @@ return {
         { "<leader>gb",      function() Snacks.picker.git_branches() end,                            desc = "Git Branches" },
         { "<leader>gd",      function() Snacks.picker.git_diff() end,                                desc = "Git Diff (Hunks)" },
         { "<leader>gf",      function() Snacks.picker.git_log_file({ focus = "list" }) end,          desc = "Git Log File" },
-        { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
         { "<leader>gl",      function() Snacks.picker.git_log({ focus = "list" }) end,               desc = "Git Log" },
         { "<leader>gL",      function() Snacks.picker.git_log_line({ focus = "list" }) end,          desc = "Git Log Line" },
         { "<leader>gs",      function() Snacks.picker.git_status() end,                              desc = "Git Status" },
@@ -67,37 +66,11 @@ return {
                 })
             end,
         }):map("<leader>ud")
-        Snacks.toggle.new({
-            name = "Statusline - Progress",
-            get = function()
-                return require("ksj").lualine.progress
-            end,
-            set = function(state)
-                require("ksj").lualine.progress = state
-            end,
-        }):map("<leader>up")
-        -- prevent flashing in blink.cmp
-        local group = vim.api.nvim_create_augroup("snacks_blink_compat", { clear = true })
-        vim.api.nvim_create_autocmd("User", {
-            group = group,
-            pattern = "BlinkCmpMenuOpen",
-            callback = Snacks.scroll.disable,
-        })
-        vim.api.nvim_create_autocmd("User", {
-            group = group,
-            pattern = "BlinkCmpMenuClose",
-            callback = Snacks.scroll.enable,
-        })
     end,
     opts = {
         bigfile = {},
         explorer = { replace_netrw = true },
-        input = { enabled = false },
-        lazygit = {},
         picker = {
-            layout = {
-                backdrop = false,
-            },
             sources = {
                 explorer = {
                     auto_close = true,
@@ -106,9 +79,8 @@ return {
                 },
             },
         },
-        styles = {
-            lazygit = { height = 0, width = 0 },
+        win = {
+            backdrop = false,
         },
-        words = {},
     },
 }
