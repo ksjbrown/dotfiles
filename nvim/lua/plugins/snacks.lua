@@ -58,7 +58,12 @@ return {
                 },
             },
         },
-        scroll = {},
+        scroll = {
+            animate = {
+                duration = { step = 10, total = 150 },
+                easing = "outQuad",
+            },
+        },
         styles = { lazygit = { height = 0, width = 0 } },
         win = { backdrop = false },
     },
