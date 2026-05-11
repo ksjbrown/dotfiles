@@ -2,7 +2,6 @@ local function map(mode, lhs, rhs, opts)
     opts = opts or {}
     vim.keymap.set(mode, lhs, rhs, opts)
 end
-
 local function map_n(lhs, rhs, opts) map("n", lhs, rhs, opts) end
 local function map_v(lhs, rhs, opts) map("v", lhs, rhs, opts) end
 local function map_nv(lhs, rhs, opts) map({ "n", "v" }, lhs, rhs, opts) end
@@ -58,8 +57,6 @@ map_v(">", ">gv", { desc = "Visual: Indent and reselect" })
 map_nv("j", "v:count == 0 ? 'gj' : 'j'", { desc = "Navigate screen lines (wrap-aware)", expr = true })
 map_nv("k", "v:count == 0 ? 'gk' : 'k'", { desc = "Navigate screen lines (wrap-aware)", expr = true })
 
-map_nv("<F2>", vim.lsp.buf.rename, { desc = "LSP: Rename symbol under cursor" })
-map_nv("<leader>.", vim.lsp.buf.code_action, { desc = "LSP: Show code actions" })
 map_nv("<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Show code actions" })
 map_nv("<leader>cd", vim.diagnostic.open_float, { desc = "Diagnostics: Show under cursor" })
 map_nv("<leader>cr", vim.lsp.buf.rename, { desc = "LSP: Rename symbol under cursor" })
