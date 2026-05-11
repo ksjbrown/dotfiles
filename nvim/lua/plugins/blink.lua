@@ -1,3 +1,5 @@
+-- https://github.com/saghen/blink.cmp
+-- https://cmp.saghen.dev/
 return {
     "saghen/blink.cmp",
     version = "1.*",
