@@ -46,7 +46,7 @@ return {
             lualine_c = {
                 {
                     "filename",
-                    path = require("ksj").lualine.path,
+                    path = 1
                 },
             },
             lualine_x = {
