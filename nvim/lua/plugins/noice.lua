@@ -22,12 +22,22 @@ return {
             },
         },
         routes = {
+            -- save file dialogs, etc.
             {
                 filter = {
                     event = "msg_show",
                     kind = "confirm",
                 },
                 view = "cmdline",
+            },
+            {
+                -- written messages
+                filter = {
+                    event = "msg_show",
+                    kind = "",
+                    find = "written",
+                },
+                opts = { skip = true },
             },
         },
     },

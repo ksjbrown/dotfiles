@@ -53,7 +53,9 @@ return {
                 { "%S" },
             },
             lualine_y = {
-                { "filetype", icon_only = true },
+                { "filetype", icon_only = true, cond = function ()
+                    return require("ksj").lualine.filetype
+                end },
                 { "lsp_status", icon = "󱓞", cond = function ()
                     return require("ksj").lualine.lsp
                 end },

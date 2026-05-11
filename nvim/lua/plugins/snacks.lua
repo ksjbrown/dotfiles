@@ -23,7 +23,7 @@ return {
         { "<leader>fu",      function() require("snacks").picker.undo({ focus = "list" }) end,                  desc = "Undo History" },
         { "<leader>fw",      function() require("snacks").picker.grep_word() end,                               desc = "Visual selection or word", mode = { "n", "x" } },
         { "<leader>gf",      function() require("snacks").picker.git_log_file({ focus = "list" }) end,          desc = "Git Log File" },
-        { "<leader>gg",      function() require("snacks").lazygit({ layout = { height = 0, width = 0}}) end,                                        desc = "Lazygit" },
+        { "<leader>gg",      function() require("snacks").lazygit({ layout = { height = 0, width = 0 } }) end,  desc = "Lazygit" },
         { "<leader>gl",      function() require("snacks").picker.git_log_line({ focus = "list" }) end,          desc = "Git Log Line" },
         -- LSP
         { "<leader>cl",      function() require("snacks").picker.lsp_config({ focus = "list" }) end,            desc = "Goto Definition" },

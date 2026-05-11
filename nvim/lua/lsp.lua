@@ -15,6 +15,9 @@ vim.diagnostic.config({
     float = {
         border = "rounded",
     },
+    jump = {
+        float = true,
+    },
 })
 vim.lsp.config('*', {
     capabilities = {
