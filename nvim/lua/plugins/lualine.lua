@@ -53,6 +53,23 @@ return {
                 { "%S" },
             },
             lualine_y = {
+                {
+                    function()
+                        return require("dap").status()
+                    end,
+                    color = function()
+                        local cp = require("catppuccin.palettes").get_palette()
+                        return { fg = cp.yellow, gui = "bold" }
+                    end,
+                    icon = { "" },
+                    cond = function()
+                        if not package.loaded.dap then
+                            return false
+                        end
+                        local session = require("dap").session()
+                        return session ~= nil
+                    end,
+                },
                 { "filetype", icon_only = true, cond = function ()
                     return require("ksj").lualine.filetype
                 end },

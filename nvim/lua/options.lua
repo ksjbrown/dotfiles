@@ -59,9 +59,9 @@ vim.api.nvim_create_autocmd({ "WinLeave" }, {
 })
 
 vim.opt.foldenable = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldmethod = "indent"
 vim.opt.foldtext = ""
+vim.opt.foldlevel = 999
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
