@@ -30,8 +30,10 @@ return {
         { "gd",              function() require("snacks").picker.lsp_definitions() end,       desc = "Goto Definition" },
         { "gD",              function() require("snacks").picker.lsp_declarations() end,      desc = "Goto Declaration" },
         { "gr",              function() require("snacks").picker.lsp_references() end,        nowait = true,                     desc = "References" },
-        { "gi",              function() require("snacks").picker.lsp_implementations() end,   desc = "Goto Implementation" },
-        { "gt",              function() require("snacks").picker.lsp_type_definitions() end,  desc = "Goto T[y]pe Definition" },
+        { "gI",              function() require("snacks").picker.lsp_implementations() end,   desc = "Goto Implementation" },
+        { "gy",              function() require("snacks").picker.lsp_type_definitions() end,  desc = "Goto T[y]pe Definition" },
+        { "gai",              function() require("snacks").picker.lsp_incoming_calls() end,  desc = "Goto Incoming Calls" },
+        { "gao",              function() require("snacks").picker.lsp_outgoing_calls() end,  desc = "Goto Outgoing Calls" },
     },
     config = function(_, opts)
         require("snacks").setup(opts)

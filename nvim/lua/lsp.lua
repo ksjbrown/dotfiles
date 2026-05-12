@@ -1,6 +1,6 @@
 require("lspconfig")
 vim.diagnostic.config({
-    virtual_text = { },
+    virtual_text = true,
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "",
@@ -14,7 +14,10 @@ vim.diagnostic.config({
         border = "rounded",
     },
     jump = {
-        float = true,
+        on_jump = function(diagnostic, _)
+            if not diagnostic then return end
+            vim.diagnostic.open_float()
+        end,
     },
 })
 vim.lsp.config('*', {
