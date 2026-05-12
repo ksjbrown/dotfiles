@@ -66,6 +66,8 @@ return {
                         preset = "default",
                         preview = true,
                     },
+                    hidden = true,
+                    ignored = true,
                 },
             },
         },
