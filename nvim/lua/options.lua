@@ -4,6 +4,7 @@ vim.opt.confirm = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number,line"
 vim.opt.expandtab = true
+vim.opt.fillchars = { eob = " "}
 vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
