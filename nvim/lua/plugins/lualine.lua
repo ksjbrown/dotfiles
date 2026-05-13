@@ -10,14 +10,15 @@ return {
         vim.opt.laststatus = 3
         vim.opt.showcmd = true
         vim.opt.showcmdloc = "statusline"
-        require("lualine").setup(opts)
         vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
             callback = function()
-                vim.defer_fn(function()
                     require('lualine').refresh()
-                end, 50)
+                -- vim.defer_fn(function()
+                --     require('lualine').refresh()
+                -- end, 50)
             end,
         })
+        require("lualine").setup(opts)
     end,
     opts = {
         options = {
@@ -33,14 +34,9 @@ return {
                     -- macro recording
                     function ()
                         local reg = vim.fn.reg_recording()
-                        if reg == "" then return "" end -- not recording
+                        if reg == "" then return "" end
                         return "@" .. reg
                     end,
-                    color = function()
-                        local cp = require("catppuccin.palettes").get_palette()
-                        return { fg = cp.yellow, gui = "bold" }
-                    end,
-
                 },
             },
             lualine_c = {
@@ -57,16 +53,13 @@ return {
                     function()
                         return require("dap").status()
                     end,
-                    color = function()
-                        local cp = require("catppuccin.palettes").get_palette()
-                        return { fg = cp.yellow }
-                    end,
+                    -- color = function ()
+                    --     local cp = require("catppuccin.palettes").get_palette()
+                    --     return { fg = cp.sapphire }
+                    -- end,
                     icon = { "" },
                     cond = function()
-                        if not package.loaded.dap then
-                            return false
-                        end
-                        return require("dap").session() ~= nil
+                        return package.loaded.dap and require("dap").session() ~= nil
                     end,
                 },
                 { "filetype", icon_only = true, cond = function ()
