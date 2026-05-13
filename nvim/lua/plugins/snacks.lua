@@ -74,8 +74,8 @@ return {
         },
         scroll = {
             animate = {
-                duration = { step = 10, total = 100 },
-                easing = "linear",
+                duration = { step = 20, total = 200 },
+                easing = "outQuad",
             },
         },
         styles = { lazygit = { height = 0, width = 0 } },

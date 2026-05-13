@@ -39,6 +39,15 @@ vim.lsp.config('basedpyright', {
         end,
     },
 })
+vim.lsp.config('gopls', {
+    settings = {
+        gopls = {
+            semanticTokens = true,
+        }
+    }
+})
+-- highlight readonly vars as constants
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly.go", { link = "@constant" })
 vim.lsp.enable({
     "angularls",
     "bashls",
