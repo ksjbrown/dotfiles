@@ -38,6 +38,7 @@ return {
     config = function(_, opts)
         require("snacks").setup(opts)
         -- toggles
+        require("snacks").toggle.inlay_hints():map("<leader>uh")
         require("snacks").toggle.indent():map("<leader>ui")
         require("snacks").toggle.line_number():map("<leader>ul")
         require("snacks").toggle.option("expandtab", { name = "Expand Tabs" }):map("<leader>ut")

@@ -59,15 +59,14 @@ return {
                     end,
                     color = function()
                         local cp = require("catppuccin.palettes").get_palette()
-                        return { fg = cp.yellow, gui = "bold" }
+                        return { fg = cp.yellow }
                     end,
                     icon = { "" },
                     cond = function()
                         if not package.loaded.dap then
                             return false
                         end
-                        local session = require("dap").session()
-                        return session ~= nil
+                        return require("dap").session() ~= nil
                     end,
                 },
                 { "filetype", icon_only = true, cond = function ()

@@ -25,6 +25,7 @@ map_n("<leader>!", "<Cmd>e!<CR>", { desc = "Buffer: Discard changes and reload" 
 map_n("<leader>wd", "<Cmd>close<CR>", { desc = "Window: Close current" })
 map_n("<leader>wv", "<Cmd>vsplit<CR>", { desc = "Window: Split vertically" })
 map_n("<leader>wh", "<Cmd>split<CR>", { desc = "Window: Split horizontally" })
+map_n("<leader>wt", "<C-w>T", { desc = "Window: Move to Tab" })
 map_n("<leader>wH", "<C-w>H", { desc = "Window: Move Left" })
 map_n("<leader>wJ", "<C-w>J", { desc = "Window: Move Down" })
 map_n("<leader>wK", "<C-w>K", { desc = "Window: Move Up" })

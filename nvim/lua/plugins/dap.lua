@@ -11,11 +11,9 @@ return {
             local cp = require("catppuccin.palettes").get_palette()
             vim.api.nvim_set_hl(0, 'RedCursor', { fg = cp.red })
             vim.api.nvim_set_hl(0, 'YellowCursor', { fg = cp.yellow })
-            vim.api.nvim_set_hl(0, 'YellowBack', { bg = cp.crust })
+            vim.api.nvim_set_hl(0, 'YellowBack', { bg = cp.surface2 })
             vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'RedCursor', linehl = '', numhl = '' })
             vim.fn.sign_define('DapStopped', { text = '', texthl = 'YellowCursor', linehl = 'YellowBack', numhl = '' })
-            vim.api.nvim_set_hl(0, "DapCurrentLine", { default = true, link = "Visual" })
-            vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
         end,
         keys = {
             { "<F5>",       function() require("dap").continue() end, desc = "Run/Continue" },
@@ -38,6 +36,45 @@ return {
         keys = {
             { "<F4>",       "<Cmd>DapViewToggle<CR>", desc = "View" },
             { "<leader>dw", "<Cmd>DapViewToggle<CR>", desc = "View" },
+        },
+        opts = {
+            winbar = {
+                show = true,
+                sections = { "repl", "console", "scopes", "breakpoints", "watches", "exceptions", "threads", },
+                default_section = "scopes",
+                custom_sections = {},
+                controls = {
+                    enabled = true,
+                    position = "right",
+                    buttons = {
+                        "play",
+                        "step_into",
+                        "step_over",
+                        "step_out",
+                        "step_back",
+                        "run_last",
+                        "terminate",
+                        "disconnect",
+                    },
+                    custom_buttons = {},
+                },
+            },
+            icons = {
+                disabled = "",
+                disconnect = "",
+                enabled = "",
+                filter = "󰈲",
+                negate = " ",
+                pause = "",
+                play = "",
+                run_last = "",
+                step_back = "",
+                step_into = "",
+                step_out = "",
+                step_over = "",
+                terminate = "",
+            },
+            auto_toggle = false,
         },
     },
     {

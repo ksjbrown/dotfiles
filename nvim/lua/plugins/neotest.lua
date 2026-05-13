@@ -4,28 +4,22 @@ return {
         "nvim-neotest/nvim-nio",
         "nvim-lua/plenary.nvim",
         "antoinemadec/FixCursorHold.nvim",
-        {
-            "nvim-treesitter/nvim-treesitter",
-        },
+        "nvim-treesitter/nvim-treesitter",
         -- adapters
         "nvim-neotest/neotest-python",
-        {
             "fredrikaverpil/neotest-golang",
-            version = "*",  -- Optional, but recommended; track releases
-            build = function()
-                vim.system({"go", "install", "gotest.tools/gotestsum@latest"}):wait() -- Optional, but recommended
-            end,
-        },
     },
     config = function ()
         ---@diagnostic disable-next-line: missing-fields
         require("neotest").setup({
-            -- require("neotest-python")({
-            --     dap = { justMyCode = false },
-            -- }),
-            require("neotest-golang")({
-                runner = "gotestsum",
-            }),
+            adapters = {
+                require("neotest-python")({
+                    dap = { justMyCode = false },
+                }),
+                require("neotest-golang")({
+                    go_test_args = require("ksj").options.go_test_args
+                }),
+            },
         })
     end,
     keys = {
