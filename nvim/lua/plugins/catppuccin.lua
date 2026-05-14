@@ -17,7 +17,7 @@ return {
                 DapBreakpointCondition = { fg = colors.red },
                 DapStopped = { fg = colors.sapphire },
                 DapStoppedLine = { bg = colors.surface1 },
-                MiniTrailspace =  { bg = colors.surface2 },
+                MiniTrailspace =  { bg = colors.overlay0 },  
             }
         end
     },
