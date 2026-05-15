@@ -8,6 +8,8 @@ return {
 	},
 	opts = {
 		formatters_by_ft = {
+            cmake = { "cmake_format" },
+            cpp = { "clang-format" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			javascript = prettier,
@@ -18,11 +20,12 @@ return {
 			lsp_format = "fallback",
 		},
 		formatters = {
-			shfmt = {
-				append_args = { "-i", "2" },
-			},
-		},
-	},
+            cmake_format = {
+                command = "cmake-format",
+                args = { "$FILENAME" },
+            },
+        },
+    },
 	init = function()
 		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 	end,
