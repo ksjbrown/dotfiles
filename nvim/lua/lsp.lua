@@ -1,6 +1,7 @@
 require("lspconfig")
 vim.diagnostic.config({
     virtual_text = true,
+    virtual_lines = false,
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "",

@@ -3,7 +3,6 @@ return {
 	event = "BufEnter",
 	keys = {
 		{ "<leader>gb", "<Cmd>Gitsigns toggle_current_line_blame<CR>", mode = { "n", "v" } },
-		{ "<leader>gd", "<Cmd>Gitsigns diffthis<CR>", mode = { "n", "v" } },
 		{ "<leader>gw", "<Cmd>Gitsigns toggle_word_diff<CR>", mode = { "n", "v" } },
 	},
 	opts = {

@@ -54,6 +54,15 @@ return {
                 vim.diagnostic.config({ virtual_text = state})
             end
         }):map("<leader>ud")
+        require("snacks").toggle.new({
+            name = "Diagnostics (Virtual Lines)",
+            get = function()
+                return vim.diagnostic.config().virtual_lines ~= false
+            end,
+            set = function(state)
+                vim.diagnostic.config({ virtual_lines = state})
+            end
+        }):map("<leader>uD")
     end,
     opts = {
         bigfile = {},
