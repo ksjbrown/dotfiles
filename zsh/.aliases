@@ -30,7 +30,7 @@ alias v='nvim'
 alias tm='tmux new -A -s default'
 alias tn='tmux new -s'
 alias ta='tmux attach'
-alias tas='tmux attach -s'
+alias tat='tmux attach -t'
 alias tl='tmux ls'
 
 alias ez='exec zsh'

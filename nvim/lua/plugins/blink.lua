@@ -54,6 +54,20 @@ return {
                 end,
                 "fallback",
             },
+            ["<C-k>"] = {
+                function(cmp)
+                    if not cmp.is_menu_visible() then
+                        return
+                    end
+                    if not cmp.is_documentation_visible() then
+                        cmp.show_documentation()
+                    else
+                        cmp.hide_documentation()
+                    end
+                    return true
+                end,
+                "fallback",
+            },
         },
         signature = {
             enabled = true,
