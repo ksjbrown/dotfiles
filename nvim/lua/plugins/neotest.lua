@@ -8,6 +8,7 @@ return {
         -- adapters
         "nvim-neotest/neotest-python",
         "fredrikaverpil/neotest-golang",
+        "alfaix/neotest-gtest"
     },
     config = function ()
         ---@diagnostic disable-next-line: missing-fields
@@ -19,6 +20,7 @@ return {
                 require("neotest-golang")({
                     go_test_args = require("ksj").options.go_test_args
                 }),
+                require("neotest-gtest").setup({}),
             },
         })
     end,
