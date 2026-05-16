@@ -33,4 +33,6 @@ alias ta='tmux attach'
 alias tat='tmux attach -t'
 alias tl='tmux ls'
 
+alias cbb='cmake --build build'
+
 alias ez='exec zsh'
