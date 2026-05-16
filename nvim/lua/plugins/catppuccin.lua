@@ -10,14 +10,16 @@ return {
 	end,
     opts = {
         auto_integrations = true,
-        no_italic = true,
+        dim_inactive = {
+            enabled = true,
+        },
         custom_highlights = function(colors)
             return {
                 DapBreakpoint = { fg = colors.red },
                 DapBreakpointCondition = { fg = colors.red },
                 DapStopped = { fg = colors.sapphire },
                 DapStoppedLine = { bg = colors.surface1 },
-                MiniTrailspace =  { bg = colors.overlay0 },  
+                MiniTrailspace =  { bg = colors.overlay0 },
             }
         end
     },

@@ -43,21 +43,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank({timeout = 200})
     end,
 })
-local cursorline_group = vim.api.nvim_create_augroup("ActiveCursorLine", { clear = true })
-vim.api.nvim_create_autocmd({ "WinEnter" }, {
-    desc = "only show cursorline in active windoww",
-    group = cursorline_group,
-    callback = function()
-        vim.wo.cursorline = true
-    end,
-})
-vim.api.nvim_create_autocmd({ "WinLeave" }, {
-    desc = "only show cursorline in active windoww",
-    group = cursorline_group,
-    callback = function()
-        vim.wo.cursorline = false
-    end,
-})
 
 vim.opt.foldenable = true
 vim.opt.foldmethod = "indent"
