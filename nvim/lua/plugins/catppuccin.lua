@@ -13,6 +13,9 @@ return {
         dim_inactive = {
             enabled = true,
         },
+        styles = {
+            comments = {},
+        },
         custom_highlights = function(colors)
             return {
                 DapBreakpoint = { fg = colors.red },
