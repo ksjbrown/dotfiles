@@ -27,6 +27,7 @@ vim.lsp.config("neocmake", {
         lint = true,
     },
 })
+vim.keymap.set("n", "<leader>cs", "<Cmd>LspClangdSwitchSourceHeader<CR>", { desc = "(C++) Switch Source/Header" } )
 vim.lsp.enable({ "clangd", "neocmake" })
 
 -- Go
