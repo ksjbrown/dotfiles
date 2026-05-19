@@ -44,10 +44,8 @@ map_n("<C-Right>", "<Cmd>vertical resize +2<CR>", { desc = "Window: Increase wid
 map_n("<M-j>", "<Cmd>execute 'move .+' . v:count1<CR>", { desc = "Move current line(s) down" })
 map_n("<M-k>", "<Cmd>execute 'move .-' . (v:count1 + 1)<CR>", { desc = "Move current line(s) up" })
 
-map_n("<M-h>", "8zh", { desc = "Horizontal scroll: View left (10 cols)" })
-map_n("<M-l>", "8zl", { desc = "Horizontal scroll: View right (10 cols)" })
-map_n("<M-H>", "zH", { desc = "Horizontal scroll: View left (half screen)" })
-map_n("<M-L>", "zL", { desc = "Horizontal scroll: View right (half screen)" })
+map_n("<M-h>", "zH", { desc = "Horizontal scroll: View left" })
+map_n("<M-l>", "zL", { desc = "Horizontal scroll: View right" })
 
 map_v("<M-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected line(s) down", silent = true })
 map_v("<M-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected line(s) up", silent = true })
